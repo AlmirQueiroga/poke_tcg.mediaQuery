@@ -1,11 +1,9 @@
 import React from "react";
-import Pokeball from '../../assets/pokeball.png'
-
-import './loading.css'
+import './loading.sass'
 
 const Loading = (): JSX.Element => {
     return (
-        <img className="loading" src={Pokeball} />
+        <img className="loading" src={require('../../assets/pokeball.png')}/>
     )
 }
 

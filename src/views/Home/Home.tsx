@@ -1,4 +1,4 @@
-import React, { Dispatch, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import useMobile from "../../hooks/useMobile";
 import { GetPokemons } from "../../store/pokemon/actions";
@@ -15,8 +15,6 @@ const Home = (): JSX.Element => {
 	useEffect(() => {
 		dispatch<any>(GetPokemons(0, ''))
 	}, [])
-
-	console.log("lista de pokemons", pokemons)
 
 	return (
 		<div style={{ height: '100vh' }}>

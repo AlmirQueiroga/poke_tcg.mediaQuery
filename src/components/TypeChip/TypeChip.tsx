@@ -1,4 +1,5 @@
 import React from "react";
+import './TypeChip.sass'
 
 interface TypeChipProps {
     color: string;
@@ -9,7 +10,7 @@ const TypeChip = (props: TypeChipProps): JSX.Element => {
     const { color, type} = props;
 
     return(
-        <section id={`type-chip-${type}`} style={{ borderRadius: 10, backgroundColor: color, height: 30, padding: '0 10px', color: '#FFF', boxShadow: '0px 5px 5px -3px rgba(0, 0, 0, 0.7)', margin: '10px 5px' }}>
+        <section className="type-chip" id={`type-chip-${type}`} style={{ backgroundColor: color }}>
             <b>{type}</b>
         </section>
     )

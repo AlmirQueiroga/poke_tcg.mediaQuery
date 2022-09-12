@@ -6,6 +6,7 @@ import ListCard from '../../../components/ListCard/ListCard';
 import Loading from '../../../components/Loading/Loading';
 import { GetPokemon } from '../../../store/pokemon/actions';
 import PokemonListItem from '../../../types/pokemon-list';
+import './HomeWeb.sass'
 
 interface HomeWebProps {
 	loading: boolean
@@ -23,16 +24,16 @@ const HomeWeb = (props: HomeWebProps) => {
 	}
 
     return (
-        <section id='home-list-pokemon-mobile' style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+        <section id='home-list-pokemon-mobile' className='home-section' >
             <SearchPokemon color={'green'}/>
             {
                 loading ? (
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+                    <div className='loading-div'>
                         <Loading />
                     </div>
                 ) : (
                     <section id='home-list-pokemon-web' style={{ height: '100%', display: 'grid', gridTemplateColumns: '25% 25% 25% 25%' }}>
-                        {pokemons.map((pokemon: PokemonListItem) => <ListCard pokemonData={pokemon} onClick={() => handleClick(pokemon.idPokemon)}/>)}
+                        {pokemons.map((pokemon: PokemonListItem) => <ListCard key={pokemon.idPokemon} pokemonData={pokemon} onClick={() => handleClick(pokemon.idPokemon)}/>)}
                     </section>
                 )
             }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { IoMdArrowForward } from 'react-icons/io'
 import PokemonAttack from "../../types/pokemon-attack";
 
-import './PokemonAttacks.css'
+import './PokemonAttacks.sass'
 
 interface PokemonAttacksProps {
     attack: PokemonAttack
@@ -27,25 +27,25 @@ const PokemonAttacks = (props: PokemonAttacksProps): JSX.Element => {
     }, [attacksRef])
 
     return (
-        <span onClick={() => setShow(true)} ref={attacksRef} style={{ width: '100%', marginTop: 10, padding: 10, color: '#FFF', display: 'flex', borderRadius: 10, justifyContent: 'space-between', backgroundColor: '#000', alignItems: 'center' }}>
+        <span onClick={() => setShow(true)} ref={attacksRef} className='attack-span'>
             <h4>{attack.name}</h4>
             <IoMdArrowForward />
 
-        <div hidden={!show} className='modal-attacks' style={{ color: '#000', padding: 20 }}>
-            <p>
-                <b>Cost: </b>
-                {attack.cost.map(item => { return `${item}, ` })}
-            </p>
-            <p>
-                <b>Converted Energy Cost: </b> {attack.convertedEnergyCost}
-            </p>
-            <p>
-                <b>Damage: </b> {attack.damage}
-            </p>
-            <p>
-                <b>Description: </b> {attack.text}
-            </p>
-        </div>
+            <div hidden={!show}>
+                <p>
+                    <b>Cost: </b>
+                    {attack.cost.map(item => { return `${item}, ` })}
+                </p>
+                <p>
+                    <b>Converted Energy Cost: </b> {attack.convertedEnergyCost}
+                </p>
+                <p>
+                    <b>Damage: </b> {attack.damage}
+                </p>
+                <p>
+                    <b>Description: </b> {attack.text}
+                </p>
+            </div>
         </span>
     );
 }
