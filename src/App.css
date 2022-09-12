@@ -4,11 +4,6 @@
   height: 100vh;
 }
 
-@font-face {
-  font-family: 'Gill Sans';
-  src: local('Gill-Sans'), url(./fonts/GILLSANS.ttf) format('ttf');
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

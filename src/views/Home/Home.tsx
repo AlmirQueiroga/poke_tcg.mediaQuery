@@ -1,24 +1,26 @@
 import React, { Dispatch, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { AnyAction } from 'redux'
 import useMobile from "../../hooks/useMobile";
-import { ApplicationState } from "../../store";
-import { ClearSearch, GetPokemons } from "../../store/pokemon/actions";
-import { PokemonDispatchTypes } from "../../store/pokemon/type";
+import { GetPokemons } from "../../store/pokemon/actions";
 import HomeMobile from "./mobile/HomeMobile";
+import HomeWeb from "./web/HomeWeb";
 
 
 const Home = (): JSX.Element => {
 	const isMobile = useMobile();
+	const loading = useSelector((state: any) => state.PokemonReducer.loading)
 	const pokemons = useSelector((state: any) => state.PokemonReducer.data)
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch<any>(GetPokemons(0, ''))
-	}, [dispatch])
+	}, [])
+
+	console.log("lista de pokemons", pokemons)
+
 	return (
 		<div style={{ height: '100vh' }}>
-			{isMobile ? (<HomeMobile />) : (<p>web</p>)}
+			{pokemons && isMobile ? (<HomeMobile loading={loading} pokemons={pokemons}/>) : (<HomeWeb loading={loading} pokemons={pokemons}/>)}
 		</div>
 	)
 }

@@ -1,9 +1,12 @@
+import PokemonAttack from "./pokemon-attack";
 import PokemonListItem from "./pokemon-list";
+import PokemonProperties from "./pokemon-props";
+
 
 interface PokemonCardItem extends PokemonListItem {
-    resistencias: string[];
-    fraquezas: string[];
-    ataques: string[];
+    resistencias: PokemonProperties[];
+    fraquezas: PokemonProperties[];
+    ataques: PokemonAttack[];
 };
 
 export default PokemonCardItem;
