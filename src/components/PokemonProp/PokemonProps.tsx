@@ -12,8 +12,8 @@ const PokemonProps = (props: PokemonPropType): JSX.Element => {
 
     return (
         <section className='prop-card' style={{ backgroundColor: color }}>
-            <b>{type}</b>
-            <p>{value}</p>
+            <b data-testid='test-type'>{type}</b>
+            <p data-testid='test-value'>{value}</p>
         </section>
     )
 }

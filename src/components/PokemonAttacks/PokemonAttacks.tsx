@@ -28,21 +28,21 @@ const PokemonAttacks = (props: PokemonAttacksProps): JSX.Element => {
 
     return (
         <span onClick={() => setShow(true)} ref={attacksRef} className='attack-span'>
-            <h4>{attack.name}</h4>
+            <h4 data-testid='test-display-name'>{attack.name}</h4>
             <IoMdArrowForward />
 
             <div hidden={!show}>
                 <p>
-                    <b>Cost: </b>
+                    <b data-testid='test-modal-cost'>Cost: </b>
                     {attack.cost.map(item => { return `${item}, ` })}
                 </p>
-                <p>
+                <p data-testid='test-modal-energy-cost'>
                     <b>Converted Energy Cost: </b> {attack.convertedEnergyCost}
                 </p>
-                <p>
+                <p data-testid='test-modal-damage'>
                     <b>Damage: </b> {attack.damage}
                 </p>
-                <p>
+                <p data-testid='test-modal-text'>
                     <b>Description: </b> {attack.text}
                 </p>
             </div>

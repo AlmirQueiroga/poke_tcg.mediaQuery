@@ -11,7 +11,7 @@ const TypeChip = (props: TypeChipProps): JSX.Element => {
 
     return(
         <section className="type-chip" id={`type-chip-${type}`} style={{ backgroundColor: color }}>
-            <b>{type}</b>
+            <b data-testid='test-type'>{type}</b>
         </section>
     )
 };
