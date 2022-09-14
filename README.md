@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+#Projeto Pokemon TCG
+
+###Aqui começa a descrição de desenvolvimento do aplicativo de listagem de cartas Pokemon TCG com estrutura baseada SOLID, PWA, sendo assim responsiva e mobile-first
+###Utilizando Redux para manipular estado global da data e react router para redirecionamento de telas, com Sass para pre processamento
+
+A primeira etapa de desenvolvimento seria a criação de um custom Hook que foi utilizado para identificação nas telas principais se o usuário está em um dispositivo
+Mobile ou Web, mudando a exibição de acordo. Ao ser aberta a home na versão mobile é possível ver o Carrossel desenvolvido com a utilização do bootstrap, já na versão Web sendo uma listagem padrão de containers em um Grid, ambas as visualizações também contém um TypeChip que mostra o tipo de pokemon e o seu id. As artas são recuperadas através do Redux que acessa a api e altera o estado de loading quando recupera os 250 dados contidos na primeira página, o Redux também vai ser responsável pelo retorno das cartas filtradas pela pesquisa que vai ser explicada mais tarde. Ao selecionar a carta foi necessário salvá-la no localStorage para não perder o estado global da carta ao sofrer uma atualização, desta forma ao acessar um pokemon este mesmo vai ser salvo e suas informações não serão perdidas.
