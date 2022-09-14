@@ -1,8 +1,8 @@
-import { Dispatch, AnyAction } from "redux";
+import { Dispatch } from "redux";
 import api from "../../services/api";
 import PokemonListItem from "../../types/pokemon-list";
 import { TypeColors } from "../../constants/types-colors";
-import { CLEAR_SEARCH, PokemonsTypes, POKEMONM_LOADING, POKEMON_FAIL, POKEMON_SUCCESS, PokemonDispatchTypes, GET_POKEMON, FOUND_POKEMON, LOAD_POKEMON_LIST, LOADING } from './type.d';
+import { PokemonsTypes, POKEMONM_LOADING, POKEMON_FAIL, POKEMON_SUCCESS, PokemonDispatchTypes, GET_POKEMON, FOUND_POKEMON, LOAD_POKEMON_LIST, LOADING } from './type.d';
 import PokemonCardItem from "../../types/pokemon-card";
 import PokemonType from "../../types/pokemon-type";
 

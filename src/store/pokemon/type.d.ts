@@ -43,9 +43,6 @@ interface PokemonFail {
     type: typeof POKEMON_FAIL
 }
 
-interface ClearSearch {
-    type: typeof CLEAR_SEARCH,
-}
 
 interface HandleSearch {
     type: typeof LOADING,

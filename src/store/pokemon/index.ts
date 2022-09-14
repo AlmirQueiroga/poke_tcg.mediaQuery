@@ -1,5 +1,5 @@
 import { Reducer } from "redux";
-import { CLEAR_SEARCH, POKEMONM_LOADING, POKEMON_FAIL, POKEMON_SUCCESS, PokemonsState, PokemonDispatchTypes, GET_POKEMON, FOUND_POKEMON, LOAD_POKEMON_LIST, LOADING } from './type.d';
+import {POKEMONM_LOADING, POKEMON_FAIL, POKEMON_SUCCESS, PokemonsState, PokemonDispatchTypes, GET_POKEMON, FOUND_POKEMON, LOAD_POKEMON_LIST, LOADING } from './type.d';
 
 const INITIAL_STATE: PokemonsState = {
     data: [],
@@ -20,9 +20,6 @@ const reducer: Reducer<PokemonsState> = (state = INITIAL_STATE, action: PokemonD
             break;
         case POKEMON_SUCCESS:
             state = {...state, loading: false, data: action.payload.pokemons};
-            break;
-        case CLEAR_SEARCH: 
-            state = {...state, search: ''};
             break;
         case GET_POKEMON:
             state = {...state, loading: true};
